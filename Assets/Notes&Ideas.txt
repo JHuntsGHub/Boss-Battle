@@ -1,0 +1,59 @@
+**Everything in this file is subject to change. It's for brainstorming/planning and will evolve over time.**
+
+
+This project will take the form of a boss battle.
+
+Big boss at start, splits into two when low on HP. When in two, occasionally tries to cast spell that makes it whole again; the spell would absorb HP from the player.
+
+Boss States:
+
+-Strafe Player
+-Ranged attack (Maybe seeking missiles of some kind?)
+#-Walk to player
+#-Run to player
+-Move to player (that takes in an extra parameter, speed?)
+-Quick melee
+-Slow melee
+-Jump away from player
+-Split In Two (Where the boss splits in two when HP low)
+-Healing HP drain attack
+-Spawn Minion
+
+Minion ideas
+-Blind Exploding Minion could take advantage of uninformed search by wandering aimlessly for a few seconds before exploding.
+-Archer minion could find cover and then fire arrows at the player.
+-Melee minions could charge the player and attack that way.
+
+
+
+#Code Structure for AI agents:
+#
+#		Behaviours			# Has a host of methods that define behaviours. # Also contains the Debug visualisation code. Ideally this class could be used by an ai to controll the player also. It might just be better to inherit this as there is the possiblity that some of the methods will need to be overridden.
+#		    |
+#		    v
+#		  State				# Has the basic functions of a state.
+#		    |
+#		    v
+#	   VariousStates		# These states follow the structure of the State class but define how the behaviours should intermingle.
+#
+##The following bit might be a bit silly. Instead, one state manager should do. A generic agent with inherited versions would be a better call.
+#		StateManager		# Generic state manager
+#		     |
+#		     v
+#	    VariousManagers		# More specialised state managers for the different types of enemies; these determine the types of various states that get added to the stack.
+#
+#	A static maths class might be handy for calculating angles and whatnot.
+
+New Structure for code!!:
+Behaviours and MathsHelper will be static classes for use by the classes below.
+
+                   ___________ Entity ________
+                  /                           \
+                 /                             \
+           Player                     _________ Enemy __________
+          /                          /                          \
+         /                          /                            \
+        /                          /                              \ 
+aiPlayer               BossTemplate                            __   Minion    __
+                         /      \                             /       |         \
+                 BossWhole      Boss1/2       ExplosiveMinion    ArcherMinion     MeleeMinion
