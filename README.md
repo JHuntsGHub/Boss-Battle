@@ -27,3 +27,11 @@ The player faces up against a big boss viking and his minions.
 
 ## Current State of Project
 The project has been finished and I have moved on to another. I copied the repository here to be public for use in my portfolio.
+
+## Screen Shots
+
+![A typical view of the scene.](https://github.com/JHuntsGHub/Boss-Battle/blob/main/.ScreenShots/BossBattle_1_Big.png)
+A typical view of the scene.
+
+![A typical view of the scene.](https://github.com/JHuntsGHub/Boss-Battle/blob/main/.ScreenShots/BossBattle_2_Big.png)
+Here we can see the debug info for the agents.
