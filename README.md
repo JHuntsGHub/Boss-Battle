@@ -8,7 +8,7 @@ As code was developed, it was pushed to the LinterValidation branch. Once there 
 
 
 ## The Game
-The player faces up against a big boss viking and his minions.
+The player faces up against a big boss Viking and his minions.
 
 ### The Player
 * Moves around with WASD.
